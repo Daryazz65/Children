@@ -24,7 +24,6 @@ namespace Children
         {
             InitializeComponent();
             
-            // vghkjfg?
         }
     }
 }

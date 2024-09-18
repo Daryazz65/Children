@@ -26,41 +26,15 @@ namespace Children.PageMain
         {
             InitializeComponent();
 
-            CmbVG.SelectedValuePath = "ID";
-            CmbVG.DisplayMemberPath = "Name";
-            CmbVG.ItemsSource = App.context.ViewGroup.ToList();
+            GroupTypeCmb
         }
 
         private void AddGroup_Click(object sender, RoutedEventArgs e)
         {
-            string mes = "";
-            if (string.IsNullOrWhiteSpace(TxtGroup.Text))
-                mes += "Введите группу\n";
-
-            if (string.IsNullOrWhiteSpace(CmbVG.Text))
-                mes += "Выберите вид группы\n";
-            if (mes != "")
-            {
-                MessageBox.Show(mes);
-                mes = "";
-                return;
-            }
-            Group groupDS = new Group()
-            {
-                Name = TxtGroup.Text,
-                ViewGroup = CmbVG.SelectedItem as ViewGroup
-            };
-            App.context.Group.Add(groupDS);
-            App.context.SaveChanges();
-            MessageBox.Show("Группа добавлена");
-
-            TxtGroup.Text = "";
-            CmbVG.Text = "";
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
         {
-            ClassFrame.FrameBody.GoBack();
         }
     }
 }
