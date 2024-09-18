@@ -15,5 +15,13 @@ namespace Children
     public partial class App : Application
     {
         public static ZininaMatveevaChildrenEntities context = new ZininaMatveevaChildrenEntities();
+        public static ZininaMatveevaChildrenEntities GetContext()
+        {
+            if (context == null)
+            {
+                context = new ZininaMatveevaChildrenEntities();
+            }
+            return context;
+        }
     }
 }

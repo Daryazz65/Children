@@ -1,4 +1,5 @@
-﻿using Children.Model;
+﻿using Children.ClassPr;
+using Children.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -22,19 +23,42 @@ namespace Children.PageMain
     /// </summary>
     public partial class PageAddGroup : Page
     {
+        private static ZininaMatveevaChildrenEntities context = App.GetContext();
         public PageAddGroup()
         {
+
             InitializeComponent();
 
-            GroupTypeCmb
+            CmbVG.ItemsSource = context.ViewGroup.ToList();
+            CmbVG.DisplayMemberPath = "Name";
+            CmbVG.SelectedIndex = 0;
+
         }
 
         private void AddGroup_Click(object sender, RoutedEventArgs e)
         {
+            string groupNumber = TxtGroup.Text;
+            if(string.IsNullOrEmpty(groupNumber) == false) 
+            {
+                Group newGroup = new Group()
+                {
+                    Name = groupNumber,
+                    ViewGroup = CmbVG.SelectedItem as ViewGroup
+                };
+                context.Group.Add(newGroup);
+                context.SaveChanges();
+                MessageBox.Show("Добавлена группа.");
+                ClassFrame.selectedFrame.Navigate(new MenuPage());
+            }
+            else
+            {
+                MessageBox.Show("Введите название группы");
+            }
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
         {
+            ClassFrame.selectedFrame.Navigate(new MenuPage());
         }
     }
 }
