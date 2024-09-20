@@ -29,21 +29,31 @@ namespace Children.PageMain
 
             InitializeComponent();
 
-            CmbVG.ItemsSource = context.ViewGroup.ToList();
-            CmbVG.DisplayMemberPath = "Name";
-            CmbVG.SelectedIndex = 0;
+            GroupTypeCmb.ItemsSource = context.ViewGroup.ToList();
+            GroupTypeCmb.DisplayMemberPath = "Name";
+            GroupTypeCmb.SelectedIndex = 0;
 
         }
 
         private void AddGroup_Click(object sender, RoutedEventArgs e)
         {
-            string groupNumber = TxtGroup.Text;
-            if(string.IsNullOrEmpty(groupNumber) == false) 
+            // ---.
+        }
+
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            // ---.
+        }
+
+        private void AddBtn_Click(object sender, RoutedEventArgs e)
+        {
+            string groupNumber = GroupNumberTb.Text;
+            if (string.IsNullOrEmpty(groupNumber) == false)
             {
                 Group newGroup = new Group()
                 {
                     Name = groupNumber,
-                    ViewGroup = CmbVG.SelectedItem as ViewGroup
+                    ViewGroup = GroupTypeCmb.SelectedItem as ViewGroup
                 };
                 context.Group.Add(newGroup);
                 context.SaveChanges();
@@ -56,18 +66,9 @@ namespace Children.PageMain
             }
         }
 
-        private void Back_Click(object sender, RoutedEventArgs e)
-        {
-            ClassFrame.selectedFrame.Navigate(new MenuPage());
-        }
-
-        private void AddBtn_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
+            ClassFrame.selectedFrame.Navigate(new MenuPage());
 
         }
     }
