@@ -5,10 +5,26 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Children.PageMain"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="286" d:DesignWidth="800"
       Title="MenuPage">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+
+        <Button Name="AddGroup" Content="Добавить группу" Click="AddGroup_Click" Grid.Row="1" Width="250"/>
+        <Button Name="AddActivity" Content="Добавить мероприятие" Click="AddActivity_Click"  Grid.Row="3" Width="250"/>
+        <Button Name="Accounting" Content="Учет" Click="Accounting_Click" Grid.Row="5" Width="250"/>
+        <Button Name="Journal" Content="Журнал" Click="Journal_Click"  Grid.Row="7" Width="250"/>
+
     </Grid>
 </Page>

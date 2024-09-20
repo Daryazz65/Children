@@ -9,36 +9,20 @@
       Title="PageAddGroup">
 
     <Grid>
-        <StackPanel Orientation="Vertical"
-                    Margin="5"
-                    Width="500">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
 
-            <StackPanel>
-                <TextBlock Width="300" Margin="5"
-                           Text="Введите группу: " FontSize="24"
-                           VerticalAlignment="Center"/>
-                <TextBox Width="300" Margin="5"
-                         Height="50"
-                         Name="TxtGroup"/>
-
-                <TextBlock Width="300" Margin="5"
-                           Text="Выберите вид группы" VerticalAlignment="Center"
-                           FontSize="24"/>
-                <ComboBox Width="300" Margin="5"
-                          Height="50"
-                          Name="CmbVG"/>
-                <StackPanel Orientation="Horizontal"
-                            Margin="5">
-                    <Button Name="AddGroup"
-                            Margin="10" Width="200"
-                            Height="50" Content="Добавить" FontSize="24"
-                            Click="AddGroup_Click"/>
-                    <Button Name="Back"
-                            Margin="10" Width="200"
-                            Height="50" Content="Назад" FontSize="24"
-                            Click="Back_Click"/>
-                </StackPanel>
-            </StackPanel>
-        </StackPanel>
+        <TextBlock Text="Введите группу" FontSize="20" Margin="275 0 0 0"/>
+        <TextBox Name="GroupNumberTb" Grid.Row="1" FontSize="20" Width="250"/>
+        <TextBlock Text="Выберите вид группы" Grid.Row="2" FontSize="20" Margin="275 0 0 0"/>
+        <ComboBox Name="GroupTypeCmb" Grid.Row="3" FontSize="20" Width="250"/>
+        <Button Name="AddBtn" Content="Добавить" Click="AddBtn_Click" Grid.Row="5" Width="200" Margin="0 0 250 0"/>
+        <Button Name="BackBtn" Content="Назад" Click="BackBtn_Click" Grid.Row="5" Width="200" Margin="250 0 0 0"/>
     </Grid>
 </Page>

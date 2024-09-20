@@ -24,5 +24,25 @@ namespace Children.PageMain
         {
             InitializeComponent();
         }
+
+        private void AddGroup_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AddActivity_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Accounting_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Journal_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

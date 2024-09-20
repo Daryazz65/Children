@@ -8,12 +8,12 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="130" />
+            <RowDefinition Height=".5*" />
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
 
-        <Image Source="/Source/Logo.png" />
-        <Frame/>
+        <Image Source="/Source/Logo.png" Stretch="Uniform" Width="700"/>
+        <Frame Name="MainFrame" Grid.Row="1" NavigationUIVisibility="Hidden"/>
         
     </Grid>
 </Window>

@@ -60,5 +60,15 @@ namespace Children.PageMain
         {
             ClassFrame.selectedFrame.Navigate(new MenuPage());
         }
+
+        private void AddBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BackBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
